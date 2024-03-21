@@ -26,7 +26,7 @@ calcBtn.addEventListener('click', () => {
 
 copyBtn.addEventListener('click', () => {
     navigator.clipboard
-        .writeText(`${col2.textContent}/${col6.textContent}/${col10.textContent}/${col3.textContent}/${col7.textContent}/${col11.textContent}/${col4.textContent}/${col8.textContent}/${col12.textContent}`)
+        .writeText(`${col2.textContent}/${col3.textContent}/${col4.textContent}/${col6.textContent}/${col7.textContent}/${col8.textContent}/${col10.textContent}/${col11.textContent}/${col12.textContent}/ЧД${numOfDestOut.textContent}`)
         .then(() => showPopup());
 })
 
@@ -52,12 +52,12 @@ function calculate(date) {
         }
     }
 
-    let destNum = addDigits(c2);
+    let destNum = c2;
     if(destNum >= 10 && destNum !== 11) {
         destNum = addDigits(destNum);
     }
 
-    let temper = (res[4] || 0) + (res[6] || 0);
+    let temper = (res[2] || 0) + (res[4] || 0) + (res[6] || 0);
     temper = splitDigits(temper).filter(e => e !== 0).length;
 
     let aim = (res[0] || 0) + (res[3] || 0) + (res[6] || 0);

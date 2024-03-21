@@ -1,0 +1,145 @@
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    background:
+            radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#bedce3 68% 70%,#0000 72%) 10px 10px/calc(2*10px) calc(2*10px),
+            radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#bedce3 68% 70%,#0000 72%) 10px 10px/calc(2*10px) calc(2*10px),
+            radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#bedce3 68% 70%,#0000 72%) 0 0/calc(2*10px) calc(2*10px),
+            radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#bedce3 68% 70%,#0000 72%) 0 0/calc(2*10px) calc(2*10px),
+            repeating-conic-gradient(#ffffff 0 25%,#0000 0 50%) 0 0/calc(2*10px) calc(2*10px),
+            radial-gradient(#0000 66%,#bedce3 68% 70%,#0000 72%) 0 calc(10px/2)/10px 10px
+            #ffffff;
+    @media (max-width: 450px) {
+        font-size: 14px;
+    }
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ffffffcc;
+    padding: 16px;
+    border-radius: 24px;
+
+    @media (max-width: 450px) {
+        padding: 8px;
+    }
+}
+
+.cell {
+    display: grid;
+    place-content: center;
+    border: 1px solid #ede7e1;
+    border-radius: 4px;
+    background-color: #dae7e6;
+}
+
+.cell:first-of-type {
+    grid-column: 1 / 5;
+    margin-bottom: 20px;
+}
+
+.cell:nth-of-type(2) {
+    grid-column: 1 / 4;
+}
+
+.cell:nth-of-type(16) {
+    grid-column: 2 / 4;
+}
+
+.cell:nth-of-type(17) {
+    grid-column: 1 / 5;
+}
+
+.cell__text {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 4px;
+}
+
+.cell__text:first-of-type,
+.cell_destiny-wrap {
+    font-weight: 600;
+}
+
+.cell__birth-date,
+.cell__destiny-number {
+    font-weight: 400;
+}
+
+.cell:first-of-type,
+.cell:last-of-type {
+    background: none;
+    border: none;
+}
+
+.cell:last-of-type {
+    margin-top: 20px;
+}
+
+.cell--left-align {
+    place-content: start;
+    padding-left: 32px;
+
+    @media (max-width: 450px) {
+        padding-left: 16px;
+    }
+}
+
+.cell--left-align .cell__text {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+
+.btn {
+    background-color: #1B1B1C;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 8px 32px;
+    transition: all 0.25s;
+}
+
+.btn:hover {
+    filter: invert(1);
+}
+
+.header__cell {
+    display: flex;
+    gap: 8px
+}
+
+.birth__input {
+    width: 250px;
+    border-radius: 8px;
+    padding: 8px;
+    font: inherit;
+    border: 1px solid #1B1B1C;
+}
+
+.copy-btn {
+    padding: 12px 60px;
+}
+
+.copy-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    background-color: #b7f4d8;
+    text-align: center;
+    padding: 20px 50px;
+    border-radius: 24px;
+    display: none;
+}

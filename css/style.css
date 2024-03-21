@@ -47,7 +47,7 @@ body {
 }
 
 .cell:nth-of-type(16) {
-    grid-column: 2 / 4;
+    grid-column: 2 / 3;
 }
 
 .cell:nth-of-type(17) {
